@@ -817,6 +817,8 @@
 {
     // loading url, start spinner, update back/forward
 
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
     self.addressLabel.text = NSLocalizedString(@"Loading...", nil);
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
@@ -839,6 +841,8 @@
 - (void)webViewDidFinishLoad:(UIWebView*)theWebView
 {
     // update url, stop spinner, update back/forward
+
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
     self.addressLabel.text = [self.currentURL absoluteString];
     self.backButton.enabled = theWebView.canGoBack;
@@ -869,6 +873,8 @@
 {
     // log fail message, stop spinner, update back/forward
     NSLog(@"webView:didFailLoadWithError - %ld: %@", (long)error.code, [error localizedDescription]);
+
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
