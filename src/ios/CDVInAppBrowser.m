@@ -533,12 +533,14 @@
     self.toolbar.autoresizesSubviews = YES;
     self.toolbar.autoresizingMask = toolbarIsAtBottom ? (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin) : UIViewAutoresizingFlexibleWidth;
     self.toolbar.barStyle = UIBarStyleBlackOpaque;
+    self.toolbar.barTintColor = [self colorFromHexString:_browserOptions.bartintcolor];
     self.toolbar.clearsContextBeforeDrawing = NO;
-    self.toolbar.clipsToBounds = NO;
+    self.toolbar.clipsToBounds = YES;
     self.toolbar.contentMode = UIViewContentModeScaleToFill;
     self.toolbar.hidden = NO;
     self.toolbar.multipleTouchEnabled = NO;
     self.toolbar.opaque = NO;
+    self.toolbar.translucent = NO;
     self.toolbar.userInteractionEnabled = YES;
 
     CGFloat labelInset = 5.0;
@@ -585,7 +587,7 @@
 
     [self.toolbar setItems:@[self.closeButton, flexibleSpaceButton, self.backButton, fixedSpaceButton, self.forwardButton]];
 
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [self colorFromHexString:_browserOptions.bartintcolor];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
     [self.view addSubview:self.spinner];
@@ -937,6 +939,7 @@
         self.toolbar = YES;
         self.closebuttoncaption = nil;
         self.toolbarposition = kInAppBrowserToolbarBarPositionBottom;
+        self.bartintcolor = @"#CCCCCC";
         self.clearcache = NO;
         self.clearsessioncache = NO;
 
