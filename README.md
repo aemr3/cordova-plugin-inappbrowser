@@ -102,6 +102,7 @@ instance, or the system browser.
     iOS only:
 
     - __closebuttoncaption__: set to a string to use as the __Done__ button's caption. Note that you need to localize this value yourself.
+    - __closebuttonposition__: Set to `left` or `right` (default is `left`). Changes close button position.
     - __disallowoverscroll__: Set to `yes` or `no` (default is `no`). Turns on/off the UIWebViewBounce property.
     - __hidden__: set to `yes` to create the browser and load the page, but not show it. The loadstop event fires when loading is complete. Omit or set to `no` (default) to have the browser open and load normally.
     - __clearcache__: set to `yes` to have the browser's cookie cache cleared before the new window is opened
@@ -115,6 +116,9 @@ instance, or the system browser.
     - __presentationstyle__:  Set to `pagesheet`, `formsheet` or `fullscreen` to set the [presentation style](http://developer.apple.com/library/ios/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle) (defaults to `fullscreen`).
     - __transitionstyle__: Set to `fliphorizontal`, `crossdissolve` or `coververtical` to set the [transition style](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalTransitionStyle) (defaults to `coververtical`).
     - __toolbarposition__: Set to `top` or `bottom` (default is `bottom`). Causes the toolbar to be at the top or bottom of the window.
+    - __statusbarstyle__: Set to `UIStatusBarStyleLightContent` or `UIStatusBarStyleDefault` (default is `UIStatusBarStyleDefault`). Changes status bar style.
+    - __bartintcolor__: Set to a hex color to use as navigation bar's tint color (default is `#CCCCCC`).
+    - __buttontintcolor__: Set to a hex color to use as navigation bar button's tint color (default is `#000000`).
 
     Windows only:
 
