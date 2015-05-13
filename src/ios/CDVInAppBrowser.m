@@ -940,6 +940,7 @@
         self.closebuttoncaption = nil;
         self.toolbarposition = kInAppBrowserToolbarBarPositionBottom;
         self.bartintcolor = @"#CCCCCC";
+        self.statusbarstyle = @"UIStatusBarStyleDefault";
         self.clearcache = NO;
         self.clearsessioncache = NO;
 
