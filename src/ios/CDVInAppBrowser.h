@@ -51,6 +51,7 @@
 @property (nonatomic, copy) NSString* closebuttoncaption;
 @property (nonatomic, copy) NSString* toolbarposition;
 @property (nonatomic, copy) NSString* bartintcolor;
+@property (nonatomic, copy) NSString* buttontintcolor;
 @property (nonatomic, copy) NSString* statusbarstyle;
 @property (nonatomic, assign) BOOL clearcache;
 @property (nonatomic, assign) BOOL clearsessioncache;
