@@ -736,7 +736,11 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleDefault;
+    if ([_browserOptions.statusbarstyle isEqualToString:@"UIStatusBarStyleLightContent"]) {
+        return UIStatusBarStyleLightContent;
+    } else {
+        return UIStatusBarStyleDefault;
+    }
 }
 
 - (void)close
