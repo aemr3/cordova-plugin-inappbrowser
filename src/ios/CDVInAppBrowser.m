@@ -587,7 +587,11 @@
     self.backButton.imageInsets = UIEdgeInsetsZero;
     self.backButton.tintColor = [self colorFromHexString:_browserOptions.buttontintcolor];
 
-    [self.toolbar setItems:@[self.closeButton, flexibleSpaceButton, self.backButton, fixedSpaceButton, self.forwardButton]];
+    if ([_browserOptions.closebuttonposition isEqualToString:@"left"]) {
+        [self.toolbar setItems:@[self.closeButton, flexibleSpaceButton, self.backButton, fixedSpaceButton, self.forwardButton]];
+    } else {
+        [self.toolbar setItems:@[self.backButton, fixedSpaceButton, self.forwardButton, flexibleSpaceButton, self.closeButton]];
+    }
 
     self.view.backgroundColor = [self colorFromHexString:_browserOptions.bartintcolor];
     [self.view addSubview:self.toolbar];
@@ -610,7 +614,12 @@
     self.closeButton.tintColor = [self colorFromHexString:_browserOptions.buttontintcolor];
 
     NSMutableArray* items = [self.toolbar.items mutableCopy];
-    [items replaceObjectAtIndex:0 withObject:self.closeButton];
+    if ([_browserOptions.closebuttonposition isEqualToString:@"left"]) {
+        [items replaceObjectAtIndex:0 withObject:self.closeButton];
+    } else {
+        NSUInteger itemsTotal = [items count];
+        [items replaceObjectAtIndex:itemsTotal-1 withObject:self.closeButton];
+    }
     [self.toolbar setItems:items];
 }
 
@@ -940,6 +949,7 @@
         self.location = YES;
         self.toolbar = YES;
         self.closebuttoncaption = nil;
+        self.closebuttonposition = @"left";
         self.toolbarposition = kInAppBrowserToolbarBarPositionBottom;
         self.bartintcolor = @"#CCCCCC";
         self.buttontintcolor = @"#000000";
