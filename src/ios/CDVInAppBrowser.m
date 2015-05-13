@@ -1010,20 +1010,6 @@
 
 @implementation CDVInAppBrowserNavigationController : UINavigationController
 
-- (void) viewDidLoad {
-
-    CGRect frame = [UIApplication sharedApplication].statusBarFrame;
-
-    // simplified from: http://stackoverflow.com/a/25669695/219684
-
-    UIToolbar* bgToolbar = [[UIToolbar alloc] initWithFrame:frame];
-    bgToolbar.barStyle = UIBarStyleDefault;
-    [self.view addSubview:bgToolbar];
-
-    [super viewDidLoad];
-}
-
-
 #pragma mark CDVScreenOrientationDelegate
 
 - (BOOL)shouldAutorotate
